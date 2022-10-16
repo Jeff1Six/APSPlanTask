@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/plugin/bootstrap.css">
+    <link rel="stylesheet" href="../js/main.js">
+    <script src="https://kit.fontawesome.com/e20da5fcf2.js" crossorigin="anonymous"></script>
+    <title>PlanTask - Main</title>
+</head>
+
+<body>
+    <div class="bg-dark d-flex justify-content-between p-2">
+        <div class="text-white d-flex align-items-center">
+            <p class="mb-0 me-2">Olá, <span class="fw-bold" id="Nome_user"></span></p>
+        </div>
+        <div class="text-white" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target=".modalLogoff">
+            <i class="fa-sharp fa-solid fa-door-open"></i>
+        </div>
+    </div>
+    <div class="main">
+        <button class="btn btn-success addPlanta">Adicionar Nova Planta</button>
+        <div class="plantasCriadas">
+
+        </div>
+    </div>
+    <div class="modal modalLogoff" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Deseja encerrar a atividade ? </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Ao sair <strong>TODAS AS SUAS TAREFAS</strong> seram excluidas.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Nao</button>
+              <button type="button" class="btn btn-primary" id="btn_logoff">Sim, Sair</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="modal modalAddPlanta" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nova Tarefa</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="alert alert-danger alertForm" role="alert">
+                    Preencha todos os campos
+                </div>
+                <div class="modal-body" id="areaInput">
+                    <form>
+                        <div>
+                            <label for="exampleFormControlInput1" class="form-label">Nome da Planta</label>
+                            <input type="text" class="form-control inputAddPlanta" name="titulo" id="nm_planta"
+                                placeholder="Digite o Nome">
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="descricaoPlanta" class="form-label">Descricao</label>
+                            <textarea class="form-control inputAddPlanta" name="descricao" id="descricaoPlanta"
+                                rows="2"></textarea>
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="descricaoPlanta" class="form-label">Escolher ou Tirar Foto da Planta</label>
+                            <div class="d-flex">
+                                <input class="form-control inputAddPlanta" accept="image/*" type="file" id="formFile">
+                            </div>
+                        </div>
+                        <hr>
+                        <div>
+                            <label for="descricaoPlanta" class="form-label">Adicionar Horario</label>
+                            <div class="d-flex">
+                                <select class="form-select inputAddPlanta" id="HoraPlanta" aria-label="Hora">
+                                    <option selected>Hora</option>
+                                </select>
+                                <select class="form-select inputAddPlanta" id="MinutoPlanta" aria-label="Minuto">
+                                    <option selected>Minuto</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="SalvarPlanta">Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/plugin/jquery.js"></script>
+    <script src="../js/plugin/bootstrap.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
